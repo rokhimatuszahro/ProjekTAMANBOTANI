@@ -1,0 +1,107 @@
+.header{
+	height: 95px;
+	background-color: #308577;
+	margin-bottom: 50px;
+}
+
+.header h1{
+	font-size: 40px;
+	display: inline-block;
+	position: absolute;
+	color: white;
+	bottom: 20px;
+	padding-left: 23px;
+	font-weight: bold;
+}
+
+.header img{
+	width: 100px;
+	height: 100px;
+}
+
+.header .dropdown-menu{
+		margin-top: 25px;
+		margin-right: 25px;
+}
+.header i{
+	margin-top: 25px;
+	font-size: 30px;
+}
+
+body{
+	background-image: url(foto/vlcsnap-2018-06-12-13h07m02s231.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+a{
+	color: black;
+	font-weight: bold;
+}
+.konten{
+	background: rgba(136,228,182,0.6);
+	padding: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 10px;
+}
+
+form .btn{
+	background-color: #308577;
+	width: 100%;
+}
+
+form{
+	font-weight: bold;
+	margin-top: 150px;
+	margin-right: 25px;
+}
+
+.right h1{
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: -100px;
+}
+
+.footer{
+	background-color: black;
+	margin-top: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.gambar1{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.gambar2{
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+@media (min-width: 768px) {
+	.header{
+	height: 136px;
+	}
+	.header img{
+	width: 140px;
+	height: 140px;
+	}
+	.header h1{
+		font-size: 70px;
+		display: inline-block;
+		position: absolute;
+		color: white;
+		bottom: 20px;
+		padding-left: 53px;
+		font-weight: bold;
+	}
+
+	.header .dropdown-menu{
+	margin-top: 35px;
+	}
+	.header i{
+		margin-top: 55px;
+		font-size: 30px;
+	}
+}
