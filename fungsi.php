@@ -2,7 +2,17 @@
 //koneksi database
 $conn = mysqli_connect("localhost","root","","tamanbotani");
 
-
+//fungsi untuk menampilkan data dari database
+function tampil($query){
+	global $conn;
+	$result = mysqli_query($conn,$query);
+	$rows = [];
+	while ($row  = mysqli_fetch_assoc($result)) {
+		$rows[] = $row;
+	}
+		return $rows;
+	}
+	
 //fungsi untuk menyimpan data registrasi pembeli ke dalam database
 function registrasi($data){
 	global $conn;

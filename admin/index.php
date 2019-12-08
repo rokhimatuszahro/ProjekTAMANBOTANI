@@ -1,3 +1,10 @@
+<?php 
+//untuk menghubungkan dengan file fungsi
+require '../fungsi.php';
+//variabel untuk menampilkan data
+$siswa = tampil("SELECT * FROM pemesanan");
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,29 +95,9 @@
           <span>Pemesanan</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="harga.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Harga</span></a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="pengunjung.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Pengunjung</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="jamkerja.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Jam Kerja</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="saranabelajar.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Sarana Belajar</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="saranarekreasi.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Sarana Rekreasi</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="saranarekreasi.html">
@@ -150,22 +137,6 @@
             </div>
           </div>
           <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-warning o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-list"></i>
-                </div>
-                <div class="mr-5">Harga</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="harga.html">
-                <span class="float-left">Lihat Data</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-success o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
@@ -182,57 +153,7 @@
             </div>
           </div>
           <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-dark o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">Jam Kerja</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="jamkerja.html">
-                <span class="float-left">Lihat Data</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-3 col-sm-6 mb-3">
             <div class="card text-white bg-danger o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">Sarana Belajar</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="saranabelajar.html">
-                <span class="float-left">Lihat Data</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-secondary o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">Sarana Rekreasi</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="saranarekreasi.html">
-                <span class="float-left">Lihat Data</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-info o-hidden h-100">
               <div class="card-body">
                 <div class="card-body-icon">
                   <i class="fas fa-fw fa-life-ring"></i>
@@ -264,17 +185,19 @@
                     <th>Jenis Kelamin</th>
                     <th>E-mail</th>
                     <th>Passwords</th>
+                    <th>Pin</th>
                     <th>Id Akses</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?= $data["id_user"]; ?></td>
+                    <td><?= $data["nama"]; ?></td>
+                    <td><?= $data["jenkel"]; ?></td>
+                    <td><?= $data["email"]; ?></td>
+                    <td><?= $data["password"]; ?></td>
+                    <td><?= $data["pin"]; ?></td>
+                    <td><?= $data["id_akses"]; ?></td>
                   </tr>
                 </tbody>
               </table>
