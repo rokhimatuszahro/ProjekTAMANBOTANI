@@ -114,9 +114,9 @@ require 'fungsi.php';
     <div class= "content1">
         <label for="buktipembayaran">Bukti Pembayaran</label>
         <button class="btn btn-primary rounded-pill" type="submit" name="submit">Unggah</button>
-        <a href="unggah.php" </a>
+        <a href="unggah.php" ></a>
         
-        <?php 
+        <!-- <?php 
 include 'koneksi.php';
 //    if($_POST['upload']){
 // 	$ekstensi_diperbolehkan	= array('png','jpg');
@@ -141,7 +141,7 @@ include 'koneksi.php';
 // 		echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
 // 	       }
 //     }
-?>
+?> -->
     </div>
     <br><br>
     <div class = "content2">
