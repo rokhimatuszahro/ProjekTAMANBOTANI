@@ -113,9 +113,9 @@ require 'fungsi.php';
                                 <div class="form-group">
                                     <br><hr>
 									
-                                        <button class="btn btn-primary rounded-pill w-25" type="submit" name="submit">Batal</button>
+                                        <button class="btn btn-primary rounded-pill w-25" type="submit" name="submit"><a href="homepembeli.php">Batal</a></button>
 									
-										<button class="float-right btn btn-primary rounded-pill w-25" type="submit" name="submit">Pesan</button>
+										<button class="float-right btn btn-primary rounded-pill w-25" type="submit" name="submit"><a href="detailpemesanan.php">Pesan</a></button>
 								
                                     <br><br>
                                 </div>

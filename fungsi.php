@@ -1,6 +1,6 @@
 <?php 
 //koneksi database
-$conn = mysqli_connect("localhost","root","","tamanbotani");
+$conn = mysqli_connect("localhost","root","","taman_botani");
 
 
 //fungsi untuk menyimpan data registrasi pembeli ke dalam database
