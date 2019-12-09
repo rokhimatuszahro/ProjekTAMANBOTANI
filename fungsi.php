@@ -1,6 +1,6 @@
 <?php 
 //koneksi database
-$conn = mysqli_connect("localhost","root","","tamanbotani");
+$conn = mysqli_connect("localhost","root","","taman_botani");
 
 //fungsi untuk menampilkan data dari database
 function tampil($query){
