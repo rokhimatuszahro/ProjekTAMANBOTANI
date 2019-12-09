@@ -2,7 +2,7 @@
 //untuk menghubungkan dengan file fungsi
 require '../fungsi.php';
 //variabel untuk menampilkan data
-$siswa = tampil("SELECT * FROM pemesanan");
+$user = tampil("SELECT * FROM users");
  ?>
 
 <!DOCTYPE html>
@@ -180,18 +180,21 @@ $siswa = tampil("SELECT * FROM pemesanan");
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Id Users</th>
-                    <th>Nama</th>
-                    <th>Jenis Kelamin</th>
-                    <th>E-mail</th>
-                    <th>Passwords</th>
-                    <th>Pin</th>
-                    <th>Id Akses</th>
+                    <th>NO</th>
+                    <th>NAMA</th>
+                    <th>JENIS KELAMIN</th>
+                    <th>E-MAIL</th>
+                    <th>PASSWORD</th>
+                    <th>PIN</th>
+                    <th>ID AKSES</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <!--untuk menampikan data pada tabel-->
+                  <?php $n = 1; ?>
+                  <?php foreach ($user as $data) :?>
                   <tr>
-                    <td><?= $data["id_user"]; ?></td>
+                    <td><?= $n; ?></td>
                     <td><?= $data["nama"]; ?></td>
                     <td><?= $data["jenkel"]; ?></td>
                     <td><?= $data["email"]; ?></td>
@@ -264,9 +267,7 @@ $siswa = tampil("SELECT * FROM pemesanan");
   <script src="js/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
-
-</body>
-
-</html>
+ <!--  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script> -->
+<!-- </body>
+</html> -->
