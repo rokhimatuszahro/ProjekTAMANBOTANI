@@ -3,8 +3,8 @@ session_start();
 //untuk menghubungkan dengan file fungsi
 require '../fungsi.php';
 //variabel untuk menampilkan data
-$user = tampil("SELECT * FROM users");
- ?>
+$pemesanan = tampil("SELECT * FROM pemesanan");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@ $user = tampil("SELECT * FROM users");
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Taman Botani - Home Admin</title>
+  <title>Taman Botani - Data Pemesanan</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,7 +59,6 @@ $user = tampil("SELECT * FROM users");
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <div class="dropdown-header"><p>Welcome <?php echo $_SESSION['nama']; ?></p></div>
           <a class="dropdown-item" href="#">Pengaturan</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="../login.php" data-toggle="modal" data-target="#logoutModal">Keluar</a>
@@ -100,7 +99,6 @@ $user = tampil("SELECT * FROM users");
         <a class="nav-link" href="pengunjung.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Pengunjung</span></a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="validasi.php">
           <i class="fas fa-fw fa-table"></i>
@@ -115,96 +113,48 @@ $user = tampil("SELECT * FROM users");
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">Dashboard</a>
+            <a href="index.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Lihat Semua</li>
+          <li class="breadcrumb-item active">Pemesanan</li>
         </ol>
 
-        <!-- Icon Cards-->
-        <div class="row">
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-primary o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-comments"></i>
-                </div>
-                <div class="mr-5">Pemesanan</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="pemesanan.php">
-                <span class="float-left">Lihat Data</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-success o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-shopping-cart"></i>
-                </div>
-                <div class="mr-5">Pengunjung</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="pengunjung.php">
-                <span class="float-left">Lihat Data</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">Validasi</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="validasi.php">
-                <span class="float-left">Lihat Data</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- DataTables Example -->
+        <!-- Data Pemesanan -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Data Pengguna</div>
+            Data Pemesanan</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+                <thead class="text-center">
                   <tr>
                     <th>NO</th>
+                    <th>ID PEMESANAN</th>
                     <th>NAMA</th>
-                    <th>JENIS KELAMIN</th>
-                    <th>E-MAIL</th>
-                    <th>PASSWORD</th>
-                    <th>PIN</th>
-                    <th>ID AKSES</th>
+                    <th>ALAMAT</th>
+                    <th>TANGGAL BERKUNJUNG</th>
+                    <th>JUMLAH TIKET</th>
+                    <th>NO TELP.</th>
+                    <th>TOTAL PEMBAYARAN</th>
+                    <th>BUKTI PEMBAYARAN</th>
                   </tr>
                 </thead>
                 <tbody>
                   <!--untuk menampikan data pada tabel-->
                   <?php $n = 1; ?>
-                  <?php foreach ($user as $data) :?>
+                  <?php foreach ($pemesanan as $data) :?>
                   <tr>
                     <td><?= $n; ?></td>
-                    <td><?= $data["nama"]; ?></td>
-                    <td><?= $data["jenkel"]; ?></td>
-                    <td><?= $data["email"]; ?></td>
-                    <td><?= $data["password"]; ?></td>
-                    <td><?= $data["pin"]; ?></td>
-                    <td><?= $data["id_akses"]; ?></td>
+                    <td><?= $data["id_pemesanan"]; ?></td>
+                    <td><?= $data["nama_pemesan"]; ?></td>
+                    <td><?= $data["alamat"]; ?></td>
+                    <td><?= $data["tanggal_berkunjung"]; ?></td>
+                    <td><?= $data["jumlah_tiket"]; ?></td>
+                    <td><?= $data["no_telp"]; ?></td>
+                    <td><?= $data["total_pembayaran"]; ?></td>
+                    <td><?= $data["bukti_pembayaran"]; ?></td>
                   </tr>
-                  <?php $n++; ?>
+                    <?php $n++; ?>
                   <?php endforeach; ?>
                 </tbody>
               </table>
@@ -212,7 +162,7 @@ $user = tampil("SELECT * FROM users");
           </div>
           <div class="card-footer small text-muted"></div>
         </div>
-
+      
       </div>
       <!-- /.container-fluid -->
 
@@ -249,7 +199,7 @@ $user = tampil("SELECT * FROM users");
         <div class="modal-body">Tekan "Keluar" Jika Anda Yakin untuk Keluar</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-          <a class="btn btn-primary" href="../login.php">Keluar</a>
+          <a class="btn btn-primary" href="login.html">Keluar</a>
         </div>
       </div>
     </div>
@@ -263,7 +213,6 @@ $user = tampil("SELECT * FROM users");
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="vendor/chart.js/Chart.min.js"></script>
   <script src="vendor/datatables/jquery.dataTables.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
 
@@ -272,6 +221,7 @@ $user = tampil("SELECT * FROM users");
 
   <!-- Demo scripts for this page-->
   <script src="js/demo/datatables-demo.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
+
 </body>
+
 </html>
