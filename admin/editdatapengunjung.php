@@ -1,4 +1,39 @@
+<?php 
+require '../fungsi.php';
 
+  session_start();
+  if (!isset($_SESSION['login'])) {
+   echo "<script>
+  alert('Akun tidak ada');
+  document.location.href='../login.php';
+  </script>";
+  }
+  
+//variabel untuk menangkap id
+$id = $_GET["id"];
+//variabel untukmenampilkan data yang telah diubah
+$pengunjung = tampil("SELECT * FROM pengunjung WHERE id_pengunjung=$id")[0];
+
+//code simpan
+if (isset($_POST["submit"])) {
+//cek apakah data berhasil diubah atau tidak dengan menampilkan pop up
+  if (ubah($_POST) > 0){
+    echo "
+    <script>
+      alert('Data berhasil diubah!!!');
+      document.location.href='pengunjung.php';
+    </script>
+    ";
+  } else {
+    echo "
+    <script>
+      alert('Data gagal diubah!!!');
+      document.location.href='pengunjung.php';
+    </script>
+    ";
+  }
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,22 +61,23 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Ubah Data Pengunjung</div>
       <div class="card-body">
-<form method="POST" action="">
+      <form method="POST" action="">
+        <input type="hidden" name="id" value="<?= $pengunjung["id_pengunjung"]; ?>">
             <div class="form-group">
               <label for="tanggal">Tanggal</label>
-              <input type="text" class="form-control rounded-pill" id="tanggal" name="tanggal">
+              <input type="text" class="form-control rounded-pill" id="tanggal" name="tanggal" required value="<?= $pengunjung["tgl_pengunjung"]; ?>">
             </div>
             <div class="form-group">
               <label for="jumlah pengunjung">Jumlah Pengunjung</label>
-              <input type="text" class="form-control rounded-pill" id="jumlah pengunjung" name="jumlah pengunjung">
+              <input type="text" class="form-control rounded-pill" id="jumlah pengunjung" name="jumlah_pengunjung" required value="<?= $pengunjung["jum_pengunjung"]; ?>">
             </div>
               <br><hr>
               <div class="row">
                 <div class="left col-md-6">
-                <button class="btn btn-danger rounded-pill ml-3" type="submit" name="submit"><a href="pengunjung.html">Batal</a></button>
+                <button class="btn btn-danger rounded-pill ml-3" type="submit" name="submit"><a href="pengunjung.php">Batal</a></button>
               </div>
               <div class="right col-md-6">
-                 <button class="btn btn-primary rounded-pill ml-5" type="submit" name="submit"><a href="">Ubah</a></button>
+                 <button class="btn btn-primary rounded-pill ml-5" type="submit" name="submit">Ubah</button>
                  </div>
               </div>
             </form>

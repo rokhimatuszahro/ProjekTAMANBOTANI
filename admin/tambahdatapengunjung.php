@@ -1,3 +1,35 @@
+<?php 
+require '../fungsi.php';
+
+  session_start();
+  if (!isset($_SESSION['login'])) {
+   echo "<script>
+  alert('Akun tidak ada');
+  document.location.href='../login.php';
+  </script>";
+  }
+//code simpan
+if (isset($_POST["submit"])) {
+//cek apakah data berhasil disimpan atau tidak dengan menampilkan pop up
+  if (pengunjung($_POST) > 0){
+    echo "
+    <script>
+      alert('Data berhasil disimpan!!!');
+      document.location.href='pengunjung.php';
+    </script>
+    ";
+  } else {
+    echo "
+    <script>
+      alert('Data gagal disimpan!!!');
+      document.location.href='pengunjung.php';
+    </script>
+    ";
+  }
+
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +41,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Tambah Data Harga</title>
+  <title>Taman Botani - Tambah Data Pengunjung</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -23,21 +55,21 @@
 
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Tambah Data Harga</div>
+      <div class="card-header">Tambah Data Pengunjung</div>
       <div class="card-body">
 <form method="POST" action="">
             <div class="form-group">
-              <label for="hari">Hari</label>
-              <input type="text" class="form-control rounded-pill" id="hari" name="hari">
+              <label for="tanggal">Tanggal</label>
+              <input type="date" class="form-control rounded-pill" id="tanggal" name="tanggal">
             </div>
             <div class="form-group">
-              <label for="harga">Harga</label>
-              <input type="text" class="form-control rounded-pill" id="harga" name="harga">
+              <label for="jumlah pengunjung">Jumlah Pengunjung</label>
+              <input type="text" class="form-control rounded-pill" id="jumlah pengunjung" name="jumlah_pengunjung">
             </div>
               <br><hr>
               <div class="row">
                 <div class="left col-md-6">
-                <button class="btn btn-primary rounded-pill ml-3" type="submit" name="submit">Batal</button>
+                <button class="btn btn-danger rounded-pill ml-3" type="submit" name="submit"><a href="pengunjung.php">Batal</a></button>
               </div>
               <div class="right col-md-6">
                  <button class="btn btn-primary rounded-pill ml-5" type="submit" name="submit">Tambah</button>
