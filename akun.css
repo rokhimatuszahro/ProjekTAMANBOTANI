@@ -1,0 +1,101 @@
+/*Media Query android*/
+
+@media (max-width: 767.98px) {
+
+	header .container img{
+		height: 70px;
+		width: 70px;
+	}
+	header .container h1{
+		font-size: 30px;
+	}
+	nav h3{
+		font-size: 17px;
+	}
+	header .btn{
+		width: 90px;
+	}
+
+}
+
+
+
+/*Windows*/
+
+body{
+	font-family: sans-serif;
+	background-image: url(foto/vlcsnap-2018-06-12-13h07m02s231.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+
+/*Header*/
+
+.transparan{
+	background-color: rgba(48, 133, 119,1);
+}
+
+.transparan2{
+	color: white;
+	padding: 20px;
+	text-align: center;
+	margin-top: -10px;
+	margin-bottom: 50px;
+	background-color: rgba(0, 0, 0,1);
+}
+
+header form .btn:hover{
+	color: white;
+	transition: 0.8s;
+}
+
+/* Header Akhir */
+
+
+/* Content */
+
+.konten{
+	background: rgba(136,228,182,0.6);
+	padding: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 10px;
+}
+
+.konten form .btn{
+	background-color: #308577;
+	width: 100%;
+}
+
+.konten form{
+	font-weight: bold;
+	margin-top: 150px;
+	margin-right: 25px;
+}
+
+.konten .right h1{
+	font-weight: bold;
+	margin-top: 100px;
+	margin-bottom: -100px;
+}
+
+/* conten akhir */
+
+
+/*Footer*/
+
+footer{
+	background-color: black;
+	margin-top: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+footer i{
+	margin-left: 5px;
+}
+
+/* Footer akhir */

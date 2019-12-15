@@ -64,7 +64,7 @@ echo "<script>
 	</div>
 
 	<div class="content">
-		<div class="konten container">
+		<div class="conten container">
 			<div class="row">
 				<div class="left col-md-6">
 					<div class="row">

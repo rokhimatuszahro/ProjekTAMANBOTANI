@@ -1,124 +1,156 @@
-.header{
-	height: 95px;
-	background-color: #308577;
-}
+/*Media Query android*/
 
-.header h1{
-	font-size: 40px;
-	display: inline-block;
-	position: absolute;
-	color: white;
-	bottom: 20px;
-	padding-left: 23px;
-	font-weight: bold;
-}
+@media (max-width: 767.98px) {
 
-.header img{
-	width: 100px;
-	height: 100px;
-}
-
-.header .dropdown-menu{
-		margin-top: 25px;
-		margin-right: 25px;
-}
-.header i{
-	margin-top: 25px;
-	font-size: 30px;
-}
-
-.header1{
-	height: 60px;
-	background-color: black;
-	margin-bottom: 20px;
+	header .container img{
+		height: 70px;
+		width: 70px;
+	}
+	header .container h1{
+		font-size: 30px;
+	}
+	nav h3{
+		font-size: 17px;
+	}
+	header .btn{
+		width: 112px;
+	}
 
 }
 
-.header1 h1{
-	font-size: 40px;
-	display: inline-block;
-	position: absolute;
-	color: white;
-	bottom: 20px;
-	padding-left: 23px;
-	font-weight: bold;
-}
+
+
+/*Windows*/
 
 body{
+	font-family: sans-serif;
 	background-image: url(foto/vlcsnap-2018-06-12-13h07m02s231.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-}
-a{
-	color: black;
-	font-weight: bold;
-}
-.konten1{
-	background: rgba(136,228,182,0.6);
-	padding: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	border-radius: 10px;
-}
-
-form .btn{
-	background-color: #308577;
-	width: 100%;
-}
-
-form{
-	font-weight: bold;
-	margin-top: 150px;
-	margin-right: 25px;
-}
-
-.right h1{
-	font-weight: bold;
-	margin-top: 50px;
-	margin-bottom: -50px;
+	background-attachment: fixed;
 }
 
 
-.footer{
+
+
+/*Header*/
+
+.transparan{
+	background-color: rgba(48, 133, 119,1);
+}
+
+.transparan2{
+	color: white;
+	padding: 20px;
+	text-align: center;
+	margin-top: -10px;
+	margin-bottom: 50px;
+	background-color: rgba(0, 0, 0,1);
+}
+
+header form .btn:hover{
+	color: white;
+	transition: 0.8s;
+}
+
+/* Header Akhir */
+
+
+
+/*Content*/
+
+content .pesan{
+	color: white;
+	background-color: rgba(136,228,182,0.6);
+	border-radius: 5px;
+	height: 400px;
+}
+
+content .sarana{
+	color: white;
+	background-color: rgba(136,228,182,0.6);
+	height: 330px;
+	border-radius: 5px;
+}
+
+content h2{
+	cursor: pointer;
+	color: white;
+	text-transform: uppercase;
+	transition-duration: 0.5s;
+}
+
+content a:hover{
+	text-decoration: none;
+}
+
+content h2:hover{
+	color: gold;
+	font-size: 35px;
+}
+
+content h2::after{
+	content: "";
+	display: block;
+	border-bottom: 2px solid rgb(15, 110, 79);
+	width: 0%;
+	transition: 0.8s;
+}
+
+content h2:hover::after{
+	content: "";
+	display: block;
+	margin: auto;
+	border-bottom: 3px solid rgb(57, 126, 99);
+	width: 75%;
+}
+
+content form{
+	margin-top: 35px;
+	text-transform: capitalize;
+}
+
+content .pesan input{
+	background: rgba(255,255,225,0.3);
+	width: 225px;
+	margin: 10px auto 0;
+	border: 2px solid rgba(44, 102, 78, 0.6);
+	color: white;
+	font-size: 17px;
+	transition: 0.4s;
+}
+
+content .pesan input:hover, content .pesan input:focus{
+	background-color: white;
+	border-color: rgb(0, 0, 0);
+	width: 90%;
+	height: 50px;
+}
+
+content .sarana .tombol1{
+	width: 20%;
+	transition: 0.9s;
+}
+
+content .sarana .tombol2{
+	width: 30%;
+	transition: 0.9s;
+}
+
+content .sarana .tombol1:hover, content .sarana .tombol2:hover{
+	width: 75%;
+}
+
+
+/*Footer*/
+
+footer{
 	background-color: black;
 	margin-top: 50px;
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
 
-.gambar1{
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-}
-
-.gambar2{
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-@media (min-width: 768px) {
-	.header{
-	height: 136px;
-	}
-	.header img{
-	width: 140px;
-	height: 140px;
-	}
-	.header h1{
-		font-size: 70px;
-		display: inline-block;
-		position: absolute;
-		color: white;
-		bottom: 20px;
-		padding-left: 53px;
-		font-weight: bold;
-	}
-
-	.header .dropdown-menu{
-	margin-top: 35px;
-	}
-	.header i{
-		margin-top: 55px;
-		font-size: 30px;
-	}
+footer i{
+	margin-left: 5px;
 }

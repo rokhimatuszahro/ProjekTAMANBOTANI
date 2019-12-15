@@ -1,17 +1,10 @@
-<?php 
-session_start();
-require 'fungsi.php';
-
- ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Home Pembeli</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="homepembeli.css">
-    <link rel="styleshhet" href="login.php">
-    <link rel="styleshhet" href="detailpembayaran.php">
+	<link rel="stylesheet" type="text/css" href="homepembeli.css">
 	<link rel="stylesheet" type="text/css" href="assets/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -21,8 +14,8 @@ require 'fungsi.php';
 <body>
 
 <section>
-	<header class="transparan" >
-		<div class="container" >
+	<header class="transparan">
+		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark mt-auto mb-2">
 			  	<a href="#">
 			  		<img src="foto/2Logo-Botani-1.png" height="100" width="100">
@@ -31,9 +24,7 @@ require 'fungsi.php';
 				  	<h1 class="text-white text-uppercase font-weight-bolder ml-4 shadow-sm">taman botani</h1>
 			  	</div>
 			  	<form class="form-inline ml-auto">
-                    <button class="btn btn-light rounded-pill " style="background-color: rgba(136,228,182,0.6);" type="submit">
-                    <a href= "registrasi.php" > Daftar Akun </a> <i class="fas fa-user"></i></button>
-                    
+			    	<button class="btn btn-light rounded-pill " style="background-color: rgba(136,228,182,0.6);" type="submit">Daftar Akun <i class="fas fa-user" style= "color: rgba(255, 255, 255, 0.6);"></i></button>
 			  	</form>
 			</nav>
 		</div>
@@ -63,13 +54,11 @@ require 'fungsi.php';
 	                        	<label for="jumlahtiket">Jumlah Tiket</label>
 	                         	<input type="jumlahtiket" class="form-control rounded-pill" id="jumlahtiket" name="jumlahtiket">
 	                        </div>
-	                        <div class="form-group ">
+	                        <div class="form-group">
 	                        		<br><hr class="w-75">
 	                        	<div >
-                                    <button class="btn btn-success rounded-pill w-25" style="background-color: rgb(57, 126, 99);" type="submit" name="submit">
-                                    
-                                    <a href="login.php" >Oke</a>
-                                    </button>
+	                            	<button class="btn btn-success rounded-pill w-25" style="background-color: rgb(57, 126, 99);" type="submit" name="submit">Ok</button>
+									<a href="detailpembayaran.php" ></a>
 								</div>
 	                        </div>
                         </form>
@@ -125,6 +114,21 @@ require 'fungsi.php';
 </content>
 </section>
 
+<div class = "content">
+    <div class= "content1">
+        <label for="buktipembayaran">Bukti Pembayaran</label>
+        <button class="btn btn-primary rounded-pill" type="submit" name="submit">Unggah</button>
+        <a href="unggah.php" ></a>
+        
+    </div>
+    <br><br>
+    <div class = "content2">
+        <label for="buktipemesanan">Bukti Pemesanan</label>
+        <button class="btn btn-primary rounded-pill" type="submit" name="submit">Cetak</button>
+    </div>
+</div>
+
+
 
 <section>
 <footer>
@@ -155,9 +159,5 @@ require 'fungsi.php';
 </footer>
 </section> 
 
-          
-
-
- 
 </body>
 </html>

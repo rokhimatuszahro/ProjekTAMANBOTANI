@@ -1,6 +1,6 @@
 <?php 
 //koneksi database
-$conn = mysqli_connect("localhost","root","","taman_botani");
+$conn = mysqli_connect("localhost","root","","tamanbotani");
 
 
 //fungsi untuk menyimpan data registrasi pembeli ke dalam database
@@ -71,5 +71,7 @@ function registrasiadmin($data){
 			</script>";}
 			exit;
 		}
+
+		
 
  ?>
